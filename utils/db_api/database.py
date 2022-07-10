@@ -141,7 +141,7 @@ class MySQLStorage:
         await self.apply("""INSERT INTO `users` (`user_id`,`status`) VALUES (%s,'active')""", (user_id))
         
     async def all_user_count(self):
-        res=  await self.get("""SELECT COUNT(`id`) FROM `users`""")
+        res = await self.get("""SELECT COUNT(`id`) FROM `users`""")
         if res:
             return res['COUNT(`id`)']
         else:
